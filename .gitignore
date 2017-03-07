@@ -1,0 +1,7 @@
+lib/libsapjco3.jnilib
+lib/sapjco3.jar
+.settings/*
+.gradle/
+.classpath
+.project
+/bin/
