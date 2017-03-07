@@ -1,0 +1,1 @@
+See: http://wbarczynski.pl/how-to-create-users-in-sap-erp-with-java-jco3-part-1-connecting-to-sap-erp/
