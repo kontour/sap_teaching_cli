@@ -9,6 +9,7 @@ import com.sap.conn.jco.JCoRepository;
 import com.sap.conn.jco.ext.DestinationDataProvider;
 import com.sap.conn.jco.ext.Environment;
 
+import java.util.Date;
 import java.util.Properties;
 
 public class CreateLogonUsers {
@@ -39,9 +40,8 @@ public class CreateLogonUsers {
   protected static Properties getDirectProperties() {
     Properties cp = new Properties();
 
-    // /H//S/
-    cp.setProperty(DestinationDataProvider.JCO_ASHOST, "/H/127.0.0.1/S/3300");
-    // client number /
+    // conn=/H/sap_erp_host/S/3300&cInt=800&user=wb
+    cp.setProperty(DestinationDataProvider.JCO_ASHOST, "/H/sap_erp_host/S/3300");
     cp.setProperty(DestinationDataProvider.JCO_CLIENT, "800");
 
     cp.setProperty(DestinationDataProvider.JCO_USER, "wb");
@@ -79,7 +79,7 @@ public class CreateLogonUsers {
 
       // connect!
       JCoRepository sapRepository = dest.getRepository();
-      System.out.println(sapRepository.getMonitor().getLastAccessTimestamp());
+      System.out.println( new Date(sapRepository.getMonitor().getLastAccessTimestamp()));
     } finally {
       // clean up
       JCoContext.end(dest);
